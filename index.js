@@ -71,8 +71,26 @@ function countTheArgs(...args) {
   return args.length;
 }
 
-// let returnArgumentCount = (...args) => {
-//   return args.length;
-// };
-
 console.log(countTheArgs(1, "perro", 6, "gato", "ratón", 7));
+
+// Ejercicio 8
+
+let array1 = [5, 5, 2, 4, 2, 5];
+let array2 = [1, 1, 1, 6, 5, 3, 4, 1, 5];
+
+function combineTwoArrays(arr1, arr2) {
+  return [...arr1, ...arr2];
+}
+
+console.log(combineTwoArrays(array1, array2));
+
+// Ejercicio 9
+
+let testArray = ["gato", "pollo", "cerdo", "cerdo"];
+
+let devolverArray = () =>
+  testArray.filter((element, index) => testArray.indexOf(element) === index);
+
+console.log(devolverArray(testArray));
+
+// Ejercicio 10
