@@ -7,22 +7,18 @@ const empleados = [
   { name: "Andrea", email: "Andrea@gmail.com" },
 ];
 
-let ana = empleados[1];
+const [, ana] = empleados;
 console.log(ana);
 
 // Ejercicio 2
 
-let emailLuis = empleados[0].email;
+const { email: emailLuis } = empleados[0];
 console.log(emailLuis);
 
 // Ejercicio 3
 
-let a = 5;
-let b = 3;
-
-[a, b] = [b, a];
-
-console.log(a, b);
+const { a = 5, b = 3 } = { a: 3, b: 5 };
+console.log(a);
 
 // Ejercicio 4
 
@@ -94,3 +90,18 @@ let devolverArray = () =>
 console.log(devolverArray(testArray));
 
 // Ejercicio 10
+
+const combineAllArrays = (...array) => array.reduce((b, c) => [...b, ...c]);
+console.log(combineAllArrays([3, 6, 7, 8], [2, 7, 3, 1])); //devuelve [3, 6, 7, 8, 2, 7, 3, 1]
+console.log(
+  combineAllArrays([2, 7, 3, 1], [2, 7, 4, 12], [2, 44, 22, 7, 3, 1])
+); // devuelve [2, 7, 3, 1, 2, 7, 4, 12, 2, 44, 22, 7, 3, 1]
+
+// Ejercicio 11
+const sumAndSquare = (...array) =>
+  array.reduce(
+    (accumulator, currentValue) => accumulator + currentValue ** 2,
+    0
+  );
+console.log(sumAndSquare(1, 2, 3, 4, 5, 6));
+console.log(sumAndSquare(1, 2, 3, 4, 5));
