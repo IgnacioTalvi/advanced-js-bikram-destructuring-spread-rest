@@ -82,20 +82,21 @@ console.log(combineTwoArrays(array1, array2));
 
 // Ejercicio 9
 
-let testArray = ["gato", "pollo", "cerdo", "cerdo"];
+let testArrayPalabras = ["gato", "pollo", "cerdo", "cerdo"];
+let testArrayNumeros = [1, 1, 4, 3, 1, 9];
 
-let devolverArray = () =>
+let onlyUniques = () =>
   testArray.filter((element, index) => testArray.indexOf(element) === index);
 
-console.log(devolverArray(testArray));
+console.log(onlyUniques(testArray));
 
 // Ejercicio 10
 
 const combineAllArrays = (...array) => array.reduce((b, c) => [...b, ...c]);
-console.log(combineAllArrays([3, 6, 7, 8], [2, 7, 3, 1])); //devuelve [3, 6, 7, 8, 2, 7, 3, 1]
+console.log(combineAllArrays([3, 6, 7, 8], [2, 7, 3, 1]));
 console.log(
   combineAllArrays([2, 7, 3, 1], [2, 7, 4, 12], [2, 44, 22, 7, 3, 1])
-); // devuelve [2, 7, 3, 1, 2, 7, 4, 12, 2, 44, 22, 7, 3, 1]
+);
 
 // Ejercicio 11
 const sumAndSquare = (...array) =>
